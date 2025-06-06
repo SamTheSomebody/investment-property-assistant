@@ -1,0 +1,27 @@
+# --- Core Backend Dependencies ---
+fastapi              # Web API framework
+uvicorn              # ASGI server to run the FastAPI app
+sqlalchemy           # ORM for defining and querying database models
+alembic              # Schema migration tool
+psycopg2-binary      # PostgreSQL driver
+
+# --- Web Scraping Dependencies ---
+httpx                # Async HTTP client for scraping
+beautifulsoup4       # HTML parsing
+lxml                 # Fast XML/HTML parser backend for BeautifulSoup
+
+# --- Environment and Config ---
+pydantic[dotenv]     # Validation and .env support (via python-dotenv)
+python-dotenv      # Already included via pydantic[dotenv], use standalone if needed
+
+# ----------------------------------------
+# Optional Packages (Commented Out)
+# Uncomment when needed for analysis, predictions, or data science work
+# ----------------------------------------
+
+# pandas             # Dataframes, CSV parsing, tabular analysis
+# numpy              # Math/statistics, used for CAGR, ROI formulas
+# scikit-learn       # Regression or ML-based predictions
+
+# rich               # Optional: Beautiful terminal logging
+# loguru             # Optional: Elegant structured logging

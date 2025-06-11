@@ -11,15 +11,17 @@ const PropertyCard: React.FC<Properties> = ({data}) => {
       <h2 className="text-lg font-semibold">{data.address}</h2>
       <p className="text-gray-600">{data.suburb} · {data.propertyType}</p>
 
+      <div className="grid grid-cols-4 text-sm">
+        <div>🛏️ {data.bedrooms}</div>
+        <div>🛁 {data.bathrooms}</div>
+        <div>🚗 {data.carSpaces}</div>
+        <div>📏 {data.squareMeters} m²</div>
+      </div>
       <div className="grid grid-cols-2 gap-2 text-sm">
-        <div>🛏️ Bedrooms: {data.bedrooms}</div>
-        <div>🛁 Bathrooms: {data.bathrooms}</div>
-        <div>🚗 Car spaces: {data.carSpaces}</div>
-        <div>📏 Area: {data.squareMeters} m²</div>
         <div>💰 Price: ${data.priceMin.toLocaleString()} – ${data.priceMax.toLocaleString()}</div>
         {data.expectedPrice && <div>📈 Expected Price: ${data.expectedPrice.toLocaleString()}</div>}
+        <div>💵 Rent: ${data.annualRentMin.toLocaleString()} – ${data.annualRentMax.toLocaleString()}</div>
         {data.expectedRentalIncome && <div>🏠 Expected Rent: ${data.expectedRentalIncome.toLocaleString()}</div>}
-        {data.annualRentalIncome && <div>📅 Annual Rent: ${data.annualRentalIncome.toLocaleString()}</div>}
       </div>
 
       {data.costs && (

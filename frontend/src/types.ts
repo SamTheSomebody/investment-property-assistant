@@ -17,9 +17,9 @@ export type ProperyData = {
   squareMeters: number;
   priceMin: number;
   priceMax: number;
+  annualRentMin: number;
+  annualRentMax: number;
   expectedPrice?: number;
   expectedRentalIncome?: number;
-  annualRentalIncomeMin?: number;
-  annualRentalIncomeMax?: number;
   costs: PropertyCosts;
 };

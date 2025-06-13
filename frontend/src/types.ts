@@ -7,10 +7,12 @@ export type PropertyCosts = {
   landlordInsurance?: number;
 };
 
-export type ProperyData = {
+export type PropertyType = "House" | "Townhouse" | "Apartment";
+
+export type PropertyData = {
   address: string;
   suburb: string;
-  propertyType: "House" | "Townhouse" | "Apartment";
+  propertyType: PropertyType;
   bedrooms: number;
   bathrooms: number;
   carSpaces: number;

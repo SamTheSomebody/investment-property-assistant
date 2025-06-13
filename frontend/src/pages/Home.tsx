@@ -1,6 +1,8 @@
+import React from "react";
 import PropertyCard from "../components/PropertyCard";
+import { PropertyData } from "../types";
 
-const sampleListings= [
+const sampleListings: PropertyData[] = [
   {
     address: "123 Test Street",
     suburb: "Fitzroy",
@@ -56,7 +58,6 @@ const sampleListings= [
     expectedRentalIncome: 45790,
     costs: {
       councilRates: 1500,
-      landTax: 1700,
       homeInsurance: 1200,
       landlordInsurance: 600,
     },
@@ -66,10 +67,10 @@ const sampleListings= [
 
 export default function Home() {
   return (
-    <div className="grid gap-4 p-4">
-    {sampleListings.map((p,i) => (
-      <PropertyCard key={i} data={p} />
-    ))}
+    <div className="grid grid-cols-3 gap-4 p-4">
+      {sampleListings.map((p, i) => (
+        <PropertyCard key={i} data={p} />
+      ))}
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import Header from "./components/Header";
-import Graph from "./components/Graph";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 
@@ -8,7 +7,6 @@ function App() {
     <div>
       <Header />
       <Home />
-      <Graph />
       <Footer />
     </div>
   );

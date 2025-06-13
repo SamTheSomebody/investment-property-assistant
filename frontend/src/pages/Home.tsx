@@ -1,6 +1,7 @@
 import React from "react";
 import PropertyCard from "../components/PropertyCard";
 import { PropertyData } from "../types";
+import Graph from "../components/Graph";
 
 const sampleListings: PropertyData[] = [
   {
@@ -66,11 +67,16 @@ const sampleListings: PropertyData[] = [
 
 
 export default function Home() {
+  const [selectedProperty, setSelectedProperty] = React.useState<PropertyData | null>(null);
+
   return (
-    <div className="grid grid-cols-3 gap-4 p-4">
-      {sampleListings.map((p, i) => (
-        <PropertyCard key={i} data={p} />
-      ))}
+    <div>
+      <div className="grid grid-cols-3 gap-4 p-4">
+        {sampleListings.map((p, i) => (
+          <PropertyCard key={i} data={p} onSelect={() => setSelectedProperty(p)} isSelected={selectedProperty === p} />
+        ))}
+      </div>
+      {selectedProperty && <Graph data={selectedProperty} />}
     </div>
   );
 }

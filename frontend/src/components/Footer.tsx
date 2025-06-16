@@ -2,7 +2,7 @@ import React from "react"
 
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-screen h-40 overflow-hidden bg-gradient-to-t from-purple-darkest text-white">
+    <footer className="absolute bottom-0 w-screen h-40 overflow-hidden bg-gradient-to-t from-purple-darkest text-white z-9">
 
       {/*Vertical lines*/}
       <div>

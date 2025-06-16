@@ -14,10 +14,11 @@ const PropertyCard: React.FC<Properties> = ({ data, onSelect }) => {
   return (
     <div
       onClick={onSelect}
-      className="p-4 transition duration-300 cursor-pointer
-      bg-gradient-to-b from-gray-875 to-gray-900 hover:from-gray-850 hover:to-gray-875 
+      className="border-2 p-4 transition duration-300 cursor-pointer 
+      bg-gradient-to-b from-gray-875 to-gray-900 hover:from-purple hover:to-purple-dark
       text-gray-200  hover:text-gray-100
-      rounded-2xl hover:rounded-xl
+      border-purple-dark hover:border-purple-light
+      rounded-s hover:rounded-xl
       shadow hover:shadow-xl
       transform hover:-translate-y-1 hover:scale-105
       ${isSelected ? 'ring-2 ring-yellow-500' : ''}" >

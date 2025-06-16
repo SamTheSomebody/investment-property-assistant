@@ -11,10 +11,6 @@ export default {
         sans: ['Raleway', 'sans-serif'],
       },
       colors: {
-        gold: {
-          DEFAULT: "#ffcc3f",   // Bright highlight
-          muted: "#b18429",     // Muted/earthy variant
-        },
         purple: {
           DEFAULT: "#7901ff",   // Vivid purple
           light: "#d58aff",     // Soft lilac
@@ -40,10 +36,25 @@ export default {
           875: "#131313",
           900: "#0c0c0c",
         },
-        coral: {
-          DEFAULT: "#febbab",   // Warm accent
+      },
+      backgroundImage: {
+        'grid-glow': `
+          linear-gradient(to right, rgba(49, 0, 109,0.5) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(49, 0, 109,0.5) 1px, transparent 1px)
+        `,
+      },
+      backgroundSize: {
+        'grid-glow': '20px 20px',
+      },
+      animation: {
+        'grid-glow': 'pulseGlow 6s ease-in-out infinite',
+      },
+      keyframes: {
+        pulseGlow: {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '0.5' },
         },
-      }
+      },
     },
   },
   plugins: [],

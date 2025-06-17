@@ -23,6 +23,7 @@ export const sampleListings: PropertyData[] = [
       councilRates: 1200,
       homeInsurance: 800,
     },
+    imageUrl: "https://i2.au.reastatic.net/592x352-crop,format=webp,progressive/55e3554890f004006f7c4b152b8f4e4783bb4e6612a9f3856b062b63a11bbc27/main.jpg"
   },
   {
     address: "45 Ocean View Road",

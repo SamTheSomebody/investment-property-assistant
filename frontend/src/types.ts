@@ -24,4 +24,5 @@ export type PropertyData = {
   expectedPrice?: number;
   expectedRentalIncome?: number;
   costs: PropertyCosts;
+  imageUrl?: string;
 };

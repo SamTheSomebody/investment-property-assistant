@@ -10,12 +10,18 @@ export default function Home() {
 
   return (
     <div>
-      <div className="min-h-1/2 flex overflow-x-auto justify-center">
+
+      <div className="h-1/2 flex overflow-x-auto justify-center">
         {sampleListings.map((p, i) => (
           <PropertyCard key={i} data={p} isSelected={selectedProperty === p} onSelect={() => setSelectedProperty(p)} />
         ))}
       </div>
-      {selectedProperty && <Graph data={selectedProperty} />}
+      <div className="z-20 absolute place-self-center inset-x-0 bottom-20 w-3/4 h-2/5
+      border border-purple-dark 
+      bg-gradient-to-b from-gray-875 to-gray-900
+      shadow-2xl">
+        {selectedProperty && <Graph data={selectedProperty} />}
+      </div>
     </div>
   )
 }

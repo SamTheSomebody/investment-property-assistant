@@ -1,56 +1,53 @@
-
 import React, { useState } from "react";
 
-type SliderWithInputProps = {
+type SliderProps = {
   label?: string;
   min?: number;
   max?: number;
   step?: number;
   value?: number;
+  format?: "$" | "%" | "";
   onChange?: (value: number) => void;
 };
 
-const SliderWithInput: React.FC<SliderWithInputProps> = ({
-  label = "Value",
-  min = 0,
-  max = 100,
-  step = 1,
-  value = 50,
-  onChange,
-}) => {
+const Slider: React.FC<SliderProps> = ({ label = "Value", min = 0, max = 100, step = 1, value = 50, format = "", onChange, }) => {
   const [, setValue] = useState(value);
-
   const handleChange = (val: number) => {
-    const clamped = Math.min(max, Math.max(min, val));
+    const clamped = Math.round(Math.min(max, Math.max(min, val)) * 10) / 10;
     setValue(clamped);
     onChange?.(clamped);
   };
-
   return (
-    <div className="w-full max-w-md space-y-2">
-      <label className="block text-sm font-medium text-gray-700">{label}</label>
+    <div className="w-full">
+      <label className="block text-sm font-medium text-white">{label}</label>
       <div className="flex items-center space-x-4">
-        <input
-          type="range"
-          className="flex-1 appearance-none h-2 bg-gray-300 rounded outline-none transition-all"
-          min={min}
-          max={max}
-          step={step}
-          value={value}
+        <input type="range"
+          className="flex-1 appearance-none accent-purple h-1 bg-gray-800 rounded outline-none transition-all"
+          min={min} max={max} step={step} value={value}
           onChange={(e) => handleChange(Number(e.target.value))}
         />
+        {format === "$" ? <p>$</p> : null}
         <input
           type="number"
-          className="w-20 px-2 py-1 border border-gray-300 rounded text-right"
-          min={min}
-          max={max}
-          step={step}
-          value={value}
+          className="w-24 p-1 rounded text-right"
+          value={formatInputValue(value, format)}
           onChange={(e) => handleChange(Number(e.target.value))}
         />
+        {format === "%" ? <p>%</p> : null}
       </div>
     </div>
   );
 };
 
-export default SliderWithInput;
+function formatInputValue(value: number, format: "$" | "%" | ""): string {
+  switch (format) {
+    case "$":
+      return value.toFixed(0);
+    case "%":
+      return value.toFixed(2);
+    default:
+      return value.toString();
+  }
+}
+
+export default Slider;

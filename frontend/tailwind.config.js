@@ -39,8 +39,8 @@ export default {
       },
       backgroundImage: {
         'grid-glow': `
-          linear-gradient(to right, rgba(49, 0, 109,0.5) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(49, 0, 109,0.5) 1px, transparent 1px)
+          linear-gradient(to right, rgba(49, 0, 109,0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(49, 0, 109,0.1) 1px, transparent 1px)
         `,
       },
       backgroundSize: {

@@ -9,14 +9,13 @@ export default function Home() {
   const [selectedProperty, setSelectedProperty] = React.useState<PropertyData | null>(null);
 
   return (
-    <div>
-
-      <div className="h-1/2 flex overflow-x-auto justify-center">
+    <div className="flex flex-col">
+      <div className="flex overflow-x-auto justify-center">
         {sampleListings.map((p, i) => (
           <PropertyCard key={i} data={p} isSelected={selectedProperty === p} onSelect={() => setSelectedProperty(p)} />
         ))}
       </div>
-      <div className="z-20 absolute place-self-center inset-x-0 bottom-20 w-3/4 h-2/5
+      <div className="z-20 aspect-video h-1/2 m-12
       border border-purple-dark 
       bg-gradient-to-b from-gray-875 to-gray-900
       shadow-2xl">

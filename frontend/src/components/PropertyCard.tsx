@@ -8,8 +8,6 @@ type Properties = {
   onSelect?: () => void;
 };
 
-//const [isFocused, setIsFocused] = useState(false);
-
 const PropertyCard: React.FC<Properties> = ({ data, onSelect }) => {
   return (
     <div

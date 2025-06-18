@@ -6,7 +6,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #0c0c0c;
 
@@ -77,7 +77,10 @@ button:focus-visible {
 
 @layer base {
   body {
-    @apply font-sans font-light;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
   }
 
   h1,
@@ -86,8 +89,14 @@ button:focus-visible {
   h4,
   h5,
   h6 {
-    font-family: theme ('fontFamily.heading'
-      );
-    @apply font-bold;
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 800;
+    font-style: bold;
+  }
+}
+
+@layer utilities {
+  .transition-default {
+    @apply transition-all duration-500 ease-out;
   }
 }

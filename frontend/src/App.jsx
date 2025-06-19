@@ -7,24 +7,26 @@ import { GlobalValuesProvider } from "./context/GlobalValuesContext";
 function App() {
   return (
     <GlobalValuesProvider>
-      <div className="w-screen h-full">
+      <div className="relative w-full h-full flex flex-col">
         <div className="fixed inset-0 -z-50 bg-grid-glow" />
-        <div className="w-full h-full flex flex-col">
+        <div className="flex-1 flex flex-col">
           <Header />
-          <div className="w-full h-full flex flex-row">
-            <Sidebar />
-            <div className="w-full h-full flex flex-col">
-              <div className="flex-1 outline outline-red-500">
+          <div className="flex-1 flex flex-row">
+            <div className="flex-0 flex flex-col">
+              <Sidebar />
+            </div>
+            <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex">
                 <Home />
               </div>
-              <div className="flex-1">
+              <div className="flex-none">
                 <Footer />
               </div>
             </div >
           </div >
         </div >
       </div>
-    </GlobalValuesProvider>
+    </GlobalValuesProvider >
   );
 }
 

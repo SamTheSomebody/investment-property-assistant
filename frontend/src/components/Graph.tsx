@@ -13,20 +13,18 @@ const propertyGrowthRate = 0.05;
 export default function Graph({ data }: { data?: PropertyData | null }) {
   let d = calculatePropertyData(data)
   return (
-    <div className="w-full h-full p-4 text-purple">
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={d} margin={{ top: 5, right: 5, left: 15, bottom: 15 }}>
-          <CartesianGrid stroke={darkAccent} />
-          <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -10 }} />
-          <YAxis label={{ value: "Net worth ($)", angle: -90, position: "insideLeft", offset: -10 }} />
-          <Tooltip />
-          <Legend height={40} layout="horizontal" align="center" verticalAlign="top" />
-          <Line type="monotone" dataKey="property" stroke="red" name="Property" />
-          <Line type="monotone" dataKey="asx" stroke="white" name="ASX" />
-          <Line type="monotone" dataKey="inflation" stroke={darkAccent} name="Inflation" />
-        </LineChart>
-      </ResponsiveContainer>
-    </div >
+    <ResponsiveContainer height="100%" width="100%">
+      <LineChart data={d} margin={{ top: 16, right: 16, left: 32, bottom: 32 }}>
+        <CartesianGrid stroke={darkAccent} />
+        <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -16 }} />
+        <YAxis label={{ value: "Net worth ($)", angle: -90, position: "insideLeft", offset: -16 }} />
+        <Tooltip />
+        <Legend height={40} layout="horizontal" align="center" verticalAlign="top" />
+        <Line type="monotone" dataKey="property" stroke="red" name="Property" />
+        <Line type="monotone" dataKey="asx" stroke="white" name="ASX" />
+        <Line type="monotone" dataKey="inflation" stroke={darkAccent} name="Inflation" />
+      </LineChart>
+    </ResponsiveContainer >
   );
 }
 

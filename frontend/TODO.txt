@@ -1,0 +1,40 @@
+TODO:
+Export costs into a property database
+Export historic data into a database
+- Inflation
+- Interest
+- Historic Strata price increases?
+- Per suburb price growth for
+	- House
+		- 1-Bed
+		- 2-Bed
+		- 3-Bed
+		- Average
+	- Townhouse
+		- 1-Bed
+		- 2-Bed
+		- 3-Bed
+		- Average
+	- Apartment
+		- 1-Bed
+		- 2-Bed
+		- 3-Bed
+		- Average
+- Average for all of Melbourne for all of the above
+
+Fix graph
+- Tool tip
+- Format Currency Label
+- Correct colours
+- Only horizontal lines
+- Set vertical interval for every 5 years
+- Make time scale adjustable?
+
+Figure out what the side bar is missing
+- Yearly contribution
+- Projected Yearly contribution % increase
+- Projected rental % increase? (Based on historic data)
+- Projected insurance % increase (inflation)
+- Projected council rate $ increase (Fixed at 2.5%)
+- Projected water rate % increase (inflation?)
+- Projected strata fee % increase (Historic data?)

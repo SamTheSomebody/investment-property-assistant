@@ -14,8 +14,8 @@ type Properties = {
 const VerticalPropertyCard: React.FC<Properties> = ({ data, isSelected, onSelect }) => {
   return (
     <div onClick={onSelect} className="relative h-full" style={{
-      maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
-      WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+      maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+      WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
     }}>
       <div className={`absolute inset-0 z-0 transition-default ${isSelected ? "opacity-100" : "opacity-0"}`}
         style={{

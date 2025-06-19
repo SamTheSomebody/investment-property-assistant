@@ -76,6 +76,13 @@ button:focus-visible {
 }
 
 @layer base {
+
+  html,
+  body,
+  #root {
+    @apply h-full w-full m-0;
+  }
+
   body {
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;

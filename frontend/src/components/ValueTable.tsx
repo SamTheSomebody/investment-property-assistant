@@ -9,8 +9,8 @@ export type PropertyTableProps = {
 const softBorderColour = "border-gray-900/20"
 const text = "text-left px-1";
 const number = "text-right px-1";
-const numberPositive = "bg-green-800/30"; // very s5oft green bg
-const numberNegative = "bg-red-800/30"; // very soft red bg
+const numberPositive = "bg-green-800/30";
+const numberNegative = "bg-red-800/30";
 const mildBorder = `border ${softBorderColour}`;
 const noTopBorder = `border border-t-0 border-b border-b-white ${softBorderColour}`;
 const hardBorderBottom = "border-b border-b-white";
@@ -32,9 +32,6 @@ const formatCurrency = (num: number | undefined) => {
 
   return num.toLocaleString('en-AU', options);
 }
-
-const formatPercentage = (num: number | undefined) =>
-  num === undefined ? "N/A" : `${(num * 100).toFixed(2)}%`;
 
 type TableRowProps = {
   label: string;
@@ -59,12 +56,7 @@ const TableRow = ({ label, values, hardBorder, bold }: TableRowProps) => {
     <tr className={`${boldClass} ${unlabelledClass}`}>
       <td className={`${text} ${hardBorderRight} ${rowBorderClass}`}>{label}</td>
       {values.map((val, i) => (
-        <td
-          key={i}
-          className={`${number} ${mildBorder} ${rowBorderClass} ${getBgClass(val)}`}
-          // Remove right border on last column for styling consistency
-          style={i === values.length - 1 ? { borderRight: "0" } : undefined}
-        >
+        <td key={i} className={`${number} ${mildBorder} ${rowBorderClass} ${getBgClass(val)}`} style={i === values.length - 1 ? { borderRight: "0" } : undefined}>
           {val || ""}
         </td>
       ))}
@@ -79,7 +71,6 @@ export default function ValueTable({ propertyData }: PropertyTableProps) {
 
   let expectedPrice = propertyData.expectedPrice ?? (propertyData.priceMax + propertyData.priceMin) / 2
   let expectedRent = propertyData.expectedRentalIncome ?? (propertyData.annualRentMax + propertyData.annualRentMin) / 2
-
 
   const valuations = [
     calculateValuation(propertyData.priceMin, propertyData.annualRentMax, propertyData, globalValues),

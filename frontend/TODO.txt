@@ -24,8 +24,12 @@ Export historic data into a database
 
 Fix graph
 - Tool tip
+  - BG grey-900
+  - Purple Border
+  - Shadow
 - Format Currency Label
 - Correct colours
+  - Grab from tailwind
 - Only horizontal lines
 - Set vertical interval for every 5 years
 - Make time scale adjustable?

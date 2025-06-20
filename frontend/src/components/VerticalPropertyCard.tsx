@@ -17,12 +17,9 @@ const VerticalPropertyCard: React.FC<Properties> = ({ data, isSelected, onSelect
       maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
       WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
     }}>
-      <div className={`absolute inset-0 z-0 transition-default ${isSelected ? "opacity-100" : "opacity-0"}`}
-        style={{
-          backgroundImage: isSelected ? `url(${data.imageUrl || '../default.png'})` : 'none',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-        }} />
+      <div className={`absolute inset-0 z-0 transistion-all duration-1000 delay-300 blur-md ${isSelected ? "opacity-100" : "opacity-0"}`}
+        style={{ backgroundImage: `url(${data.imageUrl || '../default.png'})`, backgroundSize: 'cover', backgroundPosition: 'center bottom', }}
+      />
       <div className={`relative z-10 p-4 shadow cursor-pointer bg-gradient-to-b overflow-hidden transition-default
       ${isSelected ? "border-l border-r border-purple" : "border-transparent"}
       ${isSelected ? "from-gray-850 to-gray-875/80" : "from-gray-875 to-gray-900 hover:from-gray-850 hover:to-purple-dark"} 
@@ -36,11 +33,9 @@ const VerticalPropertyCard: React.FC<Properties> = ({ data, isSelected, onSelect
             <p className="flex items-center justify-evenly">{data.carSpaces} <span className={ICONS}>directions_car</span></p>
             <p className="flex items-center justify-evenly py-1">{data.squareMeters}m²</p>
             <br />
-            <h2 className="transform rotate-90 text-2xl whitespace-nowrap">{data.address}, {data.suburb}</h2>
+            <h2 className="transform rotate-90 text-2xl text-shadow-lg/30 whitespace-nowrap">{data.address}, {data.suburb}</h2>
           </div>
-          <div className={`transition-[flex-basis] overflow-x-hidden transition-default
-          ${isSelected ? "basis-[500px]" : "basis-0"}
-      `}>
+          <div className={`transition-[flex-basis] overflow-x-hidden transition-default ${isSelected ? "basis-[500px]" : "basis-0"}`}>
             <div className="pl-4 text-left whitespace-nowrap">
               <br />
               <ValueTable propertyData={data} />

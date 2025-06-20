@@ -1,5 +1,5 @@
 import React from "react";
-import { PropertyCosts, PropertyData, PropertyType } from "../types";
+import { PropertyData, PropertyType } from "../types";
 import ValueTable from "./ValueTable";
 
 const ICONS = "material-symbols-outlined text-2xl";

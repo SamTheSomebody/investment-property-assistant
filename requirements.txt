@@ -14,6 +14,11 @@ lxml                 # Fast XML/HTML parser backend for BeautifulSoup
 pydantic[dotenv]     # Validation and .env support (via python-dotenv)
 python-dotenv      # Already included via pydantic[dotenv], use standalone if needed
 
+# --- Testing --- #
+pytest               # Testing framework
+pytest-cov           # Coverage reporting
+pytest-asyncio       # Asyncio support for testing
+
 # ----------------------------------------
 # Optional Packages (Commented Out)
 # Uncomment when needed for analysis, predictions, or data science work

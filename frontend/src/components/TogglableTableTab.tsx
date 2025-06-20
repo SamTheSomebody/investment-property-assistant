@@ -26,8 +26,8 @@ export const TogglableTable: React.FC<ToggleTableProps> = ({ label, rows }) => {
       </div>
       <div style={{ height, transition: "height 300ms ease", overflow: "hidden", }}>
         <div ref={wrapperRef} className={`flex flex-col bg-black/20 transition-default overflow-y-auto`}>
-          {rows.map(([col1, col2], _) => (
-            <div className={`flex justify-between border-b border-b-gray-800`}>
+          {rows.map(([col1, col2], i) => (
+            <div key={i} className={`flex justify-between border-b border-b-gray-800`}>
               <p className="text-sm text-left px-2">{col1}</p>
               <p className="text-sm text-right px-2">{col2}</p>
             </div>

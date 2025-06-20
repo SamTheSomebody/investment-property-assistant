@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropertyCard from "../components/VerticalPropertyCard";
 import { PropertyData } from "../types";
 import Graph from "../components/Graph";
-import { sampleListings } from "../constants"
-
+import Loading from "../components/Loading";
+import ErrorDisplay from "../components/Error";
+import { toCamelCaseProperty } from "../utils/propertyMapping";
 
 export default function Home() {
+  const [properties, setProperties] = useState<PropertyData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:8000/properties")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch properties");
+        return res.json();
+      })
+      .then((data) => setProperties(data.map(toCamelCaseProperty)))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, []);
+
   const [selectedProperty, setSelectedProperty] = React.useState<PropertyData | null>(null);
   return (
     <div className="flex-1 flex flex-col p-12 pt-0">
       <div className="flex-0 flex overflow-x-auto justify-center">
-        {sampleListings.map((p, i) => (
+        {loading && <Loading />}
+        {error && <ErrorDisplay message={error} />}
+        {!loading && !error && properties.map((p, i) => (
           <PropertyCard key={i} data={p} isSelected={selectedProperty === p} onSelect={() => setSelectedProperty(p)} />
         ))}
       </div>

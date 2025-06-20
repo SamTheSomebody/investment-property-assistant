@@ -17,6 +17,7 @@ if config.config_file_name is not None:
 # add your model's MetaData object here
 # for 'autogenerate' support
 from app.db.base import Base
+from app.db.models import Property
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
@@ -26,7 +27,11 @@ target_metadata = Base.metadata
 from dotenv import load_dotenv
 import os
 load_dotenv()
-config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
+
+database_url = os.getenv("DATABASE_URL")
+if database_url is None:
+    raise RuntimeError("DATABASE_URL environment variable is not set")
+config.set_main_option("sqlalchemy.url", database_url)
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.

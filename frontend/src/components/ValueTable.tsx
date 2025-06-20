@@ -1,5 +1,5 @@
 import React from "react";
-import { GlobalValues, PropertyCosts, PropertyData, PropertyType } from "../types";
+import { GlobalValues, PropertyData, PropertyType } from "../types";
 import { useGlobalValues } from "../context/GlobalValuesContext"
 
 export type PropertyTableProps = {
@@ -148,12 +148,12 @@ function calculateValuation(price: number, rent: number, propertyData: PropertyD
   const debt = -(Math.max(0, price - initialPrinciple));
   const interest = debt * globalValues.interest;
 
-  const strataFees = -(propertyData.costs.strataFees ?? 0);
-  const councilRates = -(propertyData.costs.councilRates ?? 0);
-  const waterRates = -(propertyData.costs.waterRates ?? 0);
+  const strataFees = -(propertyData.strataFees ?? 0);
+  const councilRates = -(propertyData.councilRates ?? 0);
+  const waterRates = -(propertyData.waterRates ?? 0);
   const landTax = -(globalValues.landTax(price / 4) ?? 0); //TODO how is land tax calucated 
-  const homeInsurance = -(propertyData.costs.homeInsurance ?? 0);
-  const landlordInsurance = propertyData.costs.landlordInsurance ?? 0;
+  const homeInsurance = -(propertyData.homeInsurance ?? 0);
+  const landlordInsurance = propertyData.landlordInsurance ?? 0;
   const unforeseenCosts = -(globalValues.unforeseenYearlyCosts ?? 0);
 
   const totalCosts =

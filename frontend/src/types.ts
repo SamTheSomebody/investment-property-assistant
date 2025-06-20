@@ -1,12 +1,3 @@
-export type PropertyCosts = {
-  strataFees?: number;
-  councilRates?: number;
-  waterRates?: number;
-  //landTax?: number; calculated as a factor of cost
-  homeInsurance?: number;
-  landlordInsurance?: number;
-};
-
 export type PropertyType = "House" | "Townhouse" | "Apartment";
 
 export type PropertyData = {
@@ -23,7 +14,11 @@ export type PropertyData = {
   annualRentMax: number;
   expectedPrice?: number;
   expectedRentalIncome?: number;
-  costs: PropertyCosts;
+  strataFees?: number;
+  councilRates?: number;
+  waterRates?: number;
+  homeInsurance?: number;
+  landlordInsurance?: number;
   imageUrl?: string;
 };
 

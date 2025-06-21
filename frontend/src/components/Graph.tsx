@@ -1,8 +1,8 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { PropertyData } from '../types';
+import { Property } from '../types/property';
 import { formatCurrency } from '../utils/format';
-import { calculatePropertyData } from '../utils/calculatePropertyData';
+import { calculateYearlyData } from '../utils/calculateYearlyData';
 
 const colors = {
   lightBackground: '#393736',
@@ -15,8 +15,8 @@ function currency(value: number) {
   return formatCurrency(value, 1);
 }
 
-export default function Graph({ data }: { data?: PropertyData | null }) {
-  let d = calculatePropertyData(data);
+export default function Graph({ data }: { data?: Property | null }) {
+  let d = calculateYearlyData();
   if (!d || d.length === 0) return null;
   const years = d.map((point) => point.year);
   const minYear = Math.min(...years);
@@ -40,14 +40,15 @@ export default function Graph({ data }: { data?: PropertyData | null }) {
           cursor={{ stroke: colors.lightBackground }}
         />
         <Legend height={40} layout="horizontal" align="center" verticalAlign="top" />
-        <Line type="monotone" dataKey="property" stroke="red" name="Property" />
-        <Line type="monotone" dataKey="asx" stroke="white" name="ASX" />
-        <Line type="monotone" dataKey="inflation" stroke={colors.lightBackground} name="Inflation" />
-        <Line type="monotone" dataKey="cashRate" stroke={colors.lightBackground} name="Cash Rate" />
-        <Line type="monotone" dataKey="housePrice" stroke={colors.lightBackground} name="House Price" />
-        <Line type="monotone" dataKey="unitPrice" stroke={colors.lightBackground} name="Unit Price" />
-        <Line type="monotone" dataKey="apartmentPrice" stroke={colors.lightBackground} name="Apartment Price" />
-        <Line type="monotone" dataKey="loan" stroke={colors.lightBackground} name="Lending Rate" />
+        <Line type="monotone" dataKey="property" stroke="red" name="Property" dot={false} />
+        <Line type="monotone" dataKey="asx" stroke="white" name="ASX" dot={false} />
+        <Line type="monotone" dataKey="inflation" stroke={colors.lightBackground} name="Inflation" dot={false} />
+        <Line type="monotone" dataKey="cashRate" stroke={colors.lightBackground} name="Cash Rate" dot={false} />
+        <Line type="monotone" dataKey="housePrice" stroke={colors.lightBackground} name="House Price" dot={false} />
+        <Line type="monotone" dataKey="unitPrice" stroke={colors.lightBackground} name="Unit Price" dot={false} />
+        <Line type="monotone" dataKey="apartmentPrice" stroke={colors.lightBackground} name="Apartment Price" dot={false} />
+        <Line type="monotone" dataKey="loan" stroke={colors.lightBackground} name="Lending Rate" dot={false} />
+        <Line type="monotone" dataKey="networth" stroke={colors.accent} name="Networth" dot={false} />
       </LineChart>
     </ResponsiveContainer>
   );

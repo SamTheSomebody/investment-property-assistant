@@ -1,12 +1,12 @@
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar"
-import { GlobalValuesProvider } from "./context/GlobalValuesContext";
+import Header from './components/sections/Header';
+import Home from './pages/Home';
+import Footer from './components/sections/Footer';
+import Sidebar from './components/sections/Sidebar';
+import { AdjustableValuesProvider } from './context/AdjustableValuesContext';
 
 function App() {
   return (
-    <GlobalValuesProvider>
+    <AdjustableValuesProvider>
       <div className="relative w-full h-full flex flex-col">
         <div className="fixed inset-0 -z-50 bg-grid-glow" />
         <div className="flex-1 flex flex-col">
@@ -22,11 +22,11 @@ function App() {
               <div className="flex-none">
                 <Footer />
               </div>
-            </div >
-          </div >
-        </div >
+            </div>
+          </div>
+        </div>
       </div>
-    </GlobalValuesProvider >
+    </AdjustableValuesProvider>
   );
 }
 

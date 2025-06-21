@@ -58,4 +58,4 @@ export const unitPrice = [{ year: 2025, value: 0 }];
 export const apartmentPrice = [{ year: 2025, value: 0 }];
 
 //Need history data for houses, units, apartments
-//Would be good to have pre suburb too
+//Would be good to have per suburb too

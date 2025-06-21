@@ -1,6 +1,6 @@
-import { PropertyData } from "../types";
+import { Property } from '../types/property';
 
-export function toCamelCaseProperty(p: any): PropertyData {
+export function toCamelCaseProperty(p: any): Property {
   return {
     address: p.address,
     suburb: p.suburb,
@@ -9,12 +9,8 @@ export function toCamelCaseProperty(p: any): PropertyData {
     bathrooms: p.bathrooms,
     carSpaces: p.car_spaces,
     squareMeters: p.square_meters,
-    priceMin: p.price_min,
-    priceMax: p.price_max,
-    annualRentMin: p.annual_rent_min,
-    annualRentMax: p.annual_rent_max,
-    expectedPrice: p.expected_price,
-    expectedRentalIncome: p.expected_rental_income,
+    price: { min: p.price_min, max: p.price_max, expected: p.expected_price },
+    rent: { min: p.annual_rent_min, max: p.annual_rent_max, expected: p.expected_rental_income },
     strataFees: p.strata_fees,
     councilRates: p.council_rates,
     waterRates: p.water_rates,

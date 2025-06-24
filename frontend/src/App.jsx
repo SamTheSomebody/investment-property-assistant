@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Footer from './components/sections/Footer';
 import Sidebar from './components/sections/Sidebar';
 import { AdjustableValuesProvider } from './context/AdjustableValuesContext';
+import ListingParser from './components/sections/ListingParser';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             </div>
             <div className="flex-1 flex flex-col">
               <div className="flex-1 flex">
-                <Home />
+                <ListingParser />
               </div>
               <div className="flex-none">
                 <Footer />

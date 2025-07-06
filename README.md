@@ -93,4 +93,7 @@ python scripts/seed_properties.py
 
 ## Additional Notes
 - Make sure PostgreSQL is running and accessible at the address specified in your `.env`.
-- For more details on project structure, contributing, or troubleshooting, see the code comments and future documentation updates. 
+- For more details on project structure, contributing, or troubleshooting, see the code comments and future documentation updates.
+
+#Contributing
+- Todo

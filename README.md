@@ -4,7 +4,7 @@
 
 Investment Property Assistant is a full-stack web application designed to help users analyze and manage property investments. It features a modern React frontend (with Vite and Tailwind CSS) and a Python FastAPI backend with a PostgreSQL database. The app allows users to view, add, update, and delete property listings, and provides detailed financial analysis for each property.
 
----
+![Demo Animation](assets/demo.webp)
 
 ## Setup Instructions
 
